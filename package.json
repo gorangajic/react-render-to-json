@@ -1,0 +1,38 @@
+{
+  "name": "react-render-to-json",
+  "version": "0.0.1",
+  "description": "hacky way to figure out what is passed to this.props.children in react",
+  "main": "lib/renderToJson.js",
+  "jsnext:main": "src/renderToJson.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "eslint": "eslint src",
+    "test": "babel-node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gorangajic/react-render-to-json.git"
+  },
+  "keywords": [
+    "react",
+    "json",
+    "render",
+    "react-dom"
+  ],
+  "author": "Goran Gajic <fero.null@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gorangajic/react-render-to-json/issues"
+  },
+  "homepage": "https://github.com/gorangajic/react-render-to-json#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "eslint": "^1.8.0",
+    "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-react": "^3.6.3"
+  },
+  "peerDependencies": {
+    "react": "^0.14.1"
+  }
+}
