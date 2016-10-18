@@ -11,10 +11,11 @@ export default function renderToJson(element) {
   delete res.attributes.children;
   if (typeof Component != "string") {
     res.name = Component.name;
+    var context = element.context||{};
     if (typeof Component.prototype.render == "function") { // ReactComponent
-      children = new Component(element.props).render();
+      children = new Component(element.props, context).render();
     } else { // function component
-      children = Component(element.props);
+      children = Component(element.props, context);
     }
   }
   if (Array.isArray(children)) {
