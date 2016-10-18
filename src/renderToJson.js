@@ -10,9 +10,12 @@ export default function renderToJson(element) {
   var children = element.props ? element.props.children : null;
   delete res.attributes.children;
   if (typeof Component != "string") {
-    var instance = new Component(element.props);
     res.name = Component.name;
-    children = instance.render();
+    if (typeof Component.prototype.render == "function") { // ReactComponent
+      children = new Component(element.props).render();
+    } else { // function component
+      children = Component(element.props);
+    }
   }
   if (Array.isArray(children)) {
     res.children = children.map(function(child) {
