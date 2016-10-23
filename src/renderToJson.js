@@ -1,29 +1,27 @@
-
+/* eslint new-cap:0 */
 export default function renderToJson(element) {
-  var res = {};
-  if (!element || !element.type) {
-    return element;
-  }
-  var Component = element.type;
-  res.name = element.type;
-  res.attributes = { ...element.props };
-  var children = element.props ? element.props.children : null;
-  delete res.attributes.children;
-  if (typeof Component !== "string") {
-    res.name = Component.name;
-    var context = element.context||{};
-    if (typeof Component.prototype.render == "function") { // ReactComponent
-      children = new Component(element.props, context).render();
-    } else { // function component
-      children = Component(element.props, context);
+    let res = {};
+    if (!element || !element.type) {
+        return element;
     }
-  }
-  if (Array.isArray(children)) {
-    res.children = children.map(function(child) {
-      return renderToJson(child);
-    });
+    const Component = element.type;
+    res.name = element.type;
+    res.attributes = { ...element.props };
+    let children = element.props ? element.props.children : null;
+    delete res.attributes.children;
+    if (typeof Component !== "string") {
+        res.name = Component.name;
+        const context = element.context || {};
+        if (typeof Component.prototype.render === "function") { // ReactComponent
+            children = new Component(element.props, context).render();
+        } else { // function component
+            children = Component(element.props, context);
+        }
+    }
+    if (Array.isArray(children)) {
+        res.children = children.map(child => renderToJson(child));
+        return res;
+    }
+    res.children = [renderToJson(children)];
     return res;
-  }
-  res.children = [renderToJson(children)];
-  return res;
-};
+}
