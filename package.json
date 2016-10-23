@@ -4,10 +4,9 @@
   "description": "hacky way to figure out what is passed to this.props.children in react",
   "main": "lib/renderToJson.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
     "eslint": "eslint src",
     "test": "eslint src && mocha --require babel-register test.js",
-    "prepublish": "npm run build"
+    "prepublish": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
