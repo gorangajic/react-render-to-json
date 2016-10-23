@@ -2,7 +2,7 @@
 export default function renderToJson(element) {
   var res = {};
   if (!element || !element.type) {
-    return {};
+    return element;
   }
   var Component = element.type;
   res.name = element.type;
