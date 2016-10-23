@@ -9,7 +9,7 @@ export default function renderToJson(element) {
   res.attributes = { ...element.props };
   var children = element.props ? element.props.children : null;
   delete res.attributes.children;
-  if (typeof Component != "string") {
+  if (typeof Component !== "string") {
     res.name = Component.name;
     var context = element.context||{};
     if (typeof Component.prototype.render == "function") { // ReactComponent
