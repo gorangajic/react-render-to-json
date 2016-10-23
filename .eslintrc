@@ -9,7 +9,8 @@
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
-
+    "react/jsx-indent": [2, 4],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     //Temporarirly disabled due to a possible bug in babel-eslint (todomvc example)
     "block-scoped-var": 0,
     // Temporarily disabled for test/* until babel/babel-eslint#33 is resolved
@@ -25,7 +26,8 @@
     "no-shadow": 0,
     "no-param-reassing": 0,
     "quotes": 0,
-    "func-names": 0
+    "func-names": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/test.js"]}]
   },
   "plugins": [
     "react"
