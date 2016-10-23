@@ -3,7 +3,6 @@
   "version": "0.0.4",
   "description": "hacky way to figure out what is passed to this.props.children in react",
   "main": "lib/renderToJson.js",
-  "jsnext:main": "src/renderToJson.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "eslint": "eslint src",
