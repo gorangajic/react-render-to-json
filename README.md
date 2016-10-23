@@ -57,6 +57,8 @@ console.log(renderToJSon(<Heart />));
 
 ```
 
+Used by [react-svg-morph](https://github.com/gorangajic/react-svg-morph/)
+
 ### Licence
 
 MIT
