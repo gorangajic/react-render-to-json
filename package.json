@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "eslint": "eslint src",
-    "test": "babel-node test.js",
+    "test": "eslint src && mocha --require babel-register test.js",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -37,6 +37,9 @@
     "eslint-plugin-import": "1.16.0",
     "eslint-plugin-jsx-a11y": "2.2.2",
     "eslint-plugin-react": "6.3.0",
+    "mocha": "3.1.2",
+    "react": "15.3.2",
+    "should": "11.1.1"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
