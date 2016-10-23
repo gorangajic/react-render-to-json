@@ -2,7 +2,7 @@
 
 > hacky way to figure out what is passed to this.props.children in react
 
-still work in progress so some thing will probably change
+[![Build Status](https://semaphoreci.com/api/v1/gorangajic/react-render-to-json/branches/master/badge.svg)](https://semaphoreci.com/gorangajic/react-render-to-json)
 
 ### install
 
