@@ -22,6 +22,6 @@ export default function renderToJson(element) {
         res.children = children.map(child => renderToJson(child));
         return res;
     }
-    res.children = [renderToJson(children)];
+    res.children = children ? [renderToJson(children)] : [];
     return res;
 }
