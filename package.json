@@ -1,6 +1,6 @@
 {
   "name": "react-render-to-json",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "hacky way to figure out what is passed to this.props.children in react",
   "main": "lib/renderToJson.js",
   "scripts": {
