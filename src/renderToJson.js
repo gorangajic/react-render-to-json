@@ -12,7 +12,7 @@ export default function renderToJson(element) {
     if (typeof Component !== "string") {
         res.name = Component.name;
         const context = element.context || {};
-        if (typeof Component.prototype.render === "function") { // ReactComponent
+        if (Component.prototype && typeof Component.prototype.render === "function") { // ReactComponent
             children = new Component(element.props, context).render();
         } else { // function component
             children = Component(element.props, context);
